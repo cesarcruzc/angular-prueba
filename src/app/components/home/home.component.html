@@ -1,0 +1,19 @@
+<div class="card-columns">
+
+  <div *ngFor="let lanzamiento of lanzamientos" class="card">
+    <img class="card-img-top" [src]="lanzamiento.images[0].url" alt="Card image cap">
+    <div class="card-body">
+      <h5 class="card-title">
+        {{ lanzamiento.name }}
+      </h5>
+      <p class="card-text">
+        <span (click)="irArtista(artista.id)" *ngFor="let artista of lanzamiento.artists" class="badge badge-primary">
+          {{ artista.name }}
+        </span>
+      </p>
+      <p class="card-text">
+        <small class="text-muted">Last updated 3 mins ago</small>
+      </p>
+    </div>
+  </div>
+</div>

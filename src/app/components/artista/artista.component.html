@@ -1,0 +1,33 @@
+<div class="row">
+  <div class="col-3">
+    <img [src]="artista.images[0].url" alt="artista.name" class="img-fluid">
+  </div>
+  <div class="col">
+    {{ artista.name }}
+    <a [href]="artista.external_urls.spotify" target="_blank">Página del artista</a>
+  </div>
+  <div class="col-4 text-right">
+    <button routerLink="/home">Regresar</button>
+  </div>
+</div>
+
+<div class="row">
+  <table class="table table-bordered">
+    <thead>
+    <tr>
+      <th scope="col">Foto</th>
+      <th scope="col">Album</th>
+      <th scope="col">Canción</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr *ngFor="let cancion of canciones">
+      <th scope="row">
+        <img class="img-fluid" [src]="cancion.album.images[0].url" alt="cancion.name">
+      </th>
+      <td>{{ cancion.album.name }}</td>
+      <td>{{ cancion.name }}</td>
+    </tr>
+    </tbody>
+  </table>
+</div>
